@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+
+    <Style>
+* {margin: 0; padding: 0;box-sizing: border-box;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+main {
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+div{
+
+max-width: 500px; height: auto;
+background-color: lightblue;
+border: solid;
+background-image: https://coda.newjobs.com/api/imagesproxy/ms/cms/content30/images/when-do-servers-make-the-most-tips.jpg;
+padding: 50px;
+
+}
+
+h1{  
+
+    margin-bottom: 10px;
+text-shadow: 1px 2px white;
+
+}
+
+label{
+
+    display: block;
+    margin-top: 15px;
+
+}
+
+input{ 
+
+    width: 400px;
+    padding: 10px 0;
+    
+}
+
+select{ 
+
+width: 400px;
+padding: 10px 0;
+
+}
+
+}
+
+    </Style>
+</head>
+<body>
+    
+    <main>
+
+<div>
+
+<h1> TIP CALCULATOR </h1>
+    <label> Bill Amount </label>
+    <input type= "text" name= "" id= "bill_amount">
+    <br>
+
+    <label> How was the Service ?? </label>
+    <select name="Service" id="tip">
+        <option value="0.2"> Excellent 20% </option>
+        <option value="0.1"> Very Good 10 %</option>
+        <option value="0.05">Good 5%</option>
+        <option value="0.01">Ordinary 1%</option>
+      </select>
+      <br><br>
+    
+    <label> How Many People are Sharing ?? </label>
+    <input type= "text" name= "" id= "tip_sharing">
+    <br>
+  <label> Tip Per Person </label>
+    <input type= "text" name= "" id= "total_billed" disabled>
+    <br>
+
+    <button onclick="tipcalcy()"> Calculate</button>
+
+    </div>
+
+    </main>
+
+<script>
+
+const tipcalcy = () => {
+
+    let amount = document.getElementById("bill_amount").value;
+    let perc = document.getElementById("tip").value;
+    let tip_contry = document.getElementById("tip_sharing").value;
+    let tip = amount * (perc / tip_contry);
+   
+
+document.getElementById("total_billed").value = tip;
+
+}
+
+    </script>
+</body>
+</html>
